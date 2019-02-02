@@ -12,6 +12,8 @@ Imports:
   ggplot2,
   magrittr,
   purrr,
+  readr,
   readxl,
   tibble,
-  tidyr
+  tidyr,
+  stringr

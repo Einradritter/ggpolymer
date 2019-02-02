@@ -5,7 +5,12 @@ output: html_notebook
 
 ToDo:
 
-organize data in a better way, databases should be part of the source package, but should
-be ignored in the compressed package via .Rbuildignore
+-- partly done organize data in a better way, databases should be part of the source package, but should
+  be ignored in the compressed package via .Rbuildignore
 
-Package should be on github
+--done  Package should be on github
+
+-- add warning messages
+
+-- add gpc data import functions
+-- fix gpc data import functions
