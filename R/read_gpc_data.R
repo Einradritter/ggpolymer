@@ -1,6 +1,4 @@
-# read_gpc <- function(dir) {
-#   readr::read_table2("C:/Users/hkw/uni/Masterarbeit/data/GPC/hw31-PDMAEMA-kinetik/hw31-0.TXT", col_names = FALSE)
-# }
+### data import functions for gpc-ascii reports
 
 read_gpc_raw <- function(file_dir) {
   file<- readr::read_file(file_dir)
@@ -27,7 +25,7 @@ read_gpc_elu <- function(file_dir) {
       col_names = c( "Volume", "molar mass","RI Signal", "integral","empty"),
       col_types = readr::cols( "Volume" = readr::col_double(),
         "molar mass" = readr::col_double(),
-        "RI Signal" = readr::col_double(),
+        "RI" = readr::col_double(),
         "integral" = readr::col_double(),
         "empty" = readr::col_double())) %>%
     dplyr::select(-"empty")
