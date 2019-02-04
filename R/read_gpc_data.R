@@ -22,7 +22,7 @@ read_gpc_elu <- function(file_dir) {
   elu_stop<- stringr::str_locate(file, "ELUstop")[1]-3
   data <- file %>% stringr::str_sub(elu_start, elu_stop) %>%
     readr::read_delim(delim = "\t", skip = 1, trim_ws = T,
-      col_names = c( "Volume", "molar mass","RI Signal", "integral","empty"),
+      col_names = c( "Volume", "molar mass","RI", "integral","empty"),
       col_types = readr::cols( "Volume" = readr::col_double(),
         "molar mass" = readr::col_double(),
         "RI" = readr::col_double(),
