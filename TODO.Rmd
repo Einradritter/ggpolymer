@@ -19,3 +19,6 @@ partly done -- organize data in a better way, databases should be part of the so
 
 
 -- gpc data plotting funktioniert immernoch nicht gescheid!
+
+-- add documentation via roxygen2
+-- add example data for examples
