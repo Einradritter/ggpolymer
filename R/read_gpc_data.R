@@ -1,5 +1,6 @@
 ### data import functions for gpc-ascii reports
 
+#' @importFrom magrittr %>%
 read_gpc_raw <- function(file_dir) {
   file<- readr::read_file(file_dir)
   rawstart<- stringr::str_locate(file, "RAWstart")[2]+5
@@ -16,6 +17,7 @@ read_gpc_raw <- function(file_dir) {
   return(data)
 }
 
+#' @importFrom magrittr %>%
 read_gpc_elu <- function(file_dir) {
   file<- readr::read_file(file_dir)
   elu_start<- stringr::str_locate(file, "ELUstart")[2]+5
@@ -32,7 +34,7 @@ read_gpc_elu <- function(file_dir) {
   return(data)
 }
 
-
+#' @importFrom magrittr %>%
 read_gpc_mwd <- function(file_dir) {
   file<- readr::read_file(file_dir)
   elu_start<- stringr::str_locate(file, "MWDstart")[2]+5
