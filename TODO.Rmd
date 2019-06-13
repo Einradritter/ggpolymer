@@ -22,3 +22,5 @@ partly done -- organize data in a better way, databases should be part of the so
 
 -- add documentation via roxygen2
 -- add example data for examples
+-- clac weights documentation fixen!
+-- add a function to calculate ratios from weights

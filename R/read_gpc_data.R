@@ -7,13 +7,16 @@ read_gpc_raw <- function(file_dir) {
   rawstop<- stringr::str_locate(file, "RAWstop")[1]-3
   data <- file %>% stringr::str_sub(rawstart, rawstop) %>%
     readr::read_delim(delim = "\t", skip = 1, trim_ws = T,
-      col_names = c("A","B","C","D"),
-      col_types = readr::cols( A = readr::col_double(),
-        B = readr::col_double(),
+      col_names = c("time","RI","C","D"),
+      col_types = readr::cols(
+        time = readr::col_double(),
+        RI = readr::col_double(),
         C = readr::col_double(),
         D = readr::col_double())) %>%
-    dplyr::select(-D) %>% tidyr::separate(C, into = c("time", "ms"), sep = 8) %>% dplyr::select(-"ms") %>%
-    readr::type_convert(col_types = readr::cols(time = readr::col_time(format = "%H:%M:%S")))
+    dplyr::select(-D) %>%
+#    tidyr::separate(C, into = c("time", "ms"), sep = 8) %>% dplyr::select(-"ms") %>%
+#    readr::type_convert(col_types = readr::cols(time = readr::col_time(format = "%H:%M:%S")))
+    dplyr::select(-C)
   return(data)
 }
 
@@ -30,7 +33,9 @@ read_gpc_elu <- function(file_dir) {
         "RI" = readr::col_double(),
         "integral" = readr::col_double(),
         "empty" = readr::col_double())) %>%
-    dplyr::select(-"empty")
+    dplyr::select(-"empty") %>%
+    dplyr::mutate(RI_norm = RI/max(RI))
+
   return(data)
 }
 

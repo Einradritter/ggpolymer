@@ -4,7 +4,7 @@
 \alias{traces_in_dir}
 \title{Read all gpc ascii files in a directory}
 \usage{
-traces_in_dir(dir)
+traces_in_dir(dir, data_type = "elu")
 }
 \arguments{
 \item{dir}{A string.}

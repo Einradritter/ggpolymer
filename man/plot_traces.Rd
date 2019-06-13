@@ -4,7 +4,8 @@
 \alias{plot_traces}
 \title{Plot refractive index vs elution volume from a list of gpc data tibbles}
 \usage{
-plot_traces(traces, durations, xlim = c(10, 45))
+plot_traces(traces, durations = FALSE, xlim = c(10, 45), ylim = c(0,
+  100), normalized_RI = FALSE)
 }
 \arguments{
 \item{traces}{A list of gpc data tibbles (best used with traces_in_dir(),}
