@@ -8,6 +8,8 @@ traces_in_dir(dir, data_type = "elu")
 }
 \arguments{
 \item{dir}{A string.}
+
+\item{data_type}{A String. "elu", "raw" or "mwd"}
 }
 \value{
 A list of gpc data tibbles as elements.

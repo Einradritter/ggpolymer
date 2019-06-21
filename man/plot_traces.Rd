@@ -2,19 +2,21 @@
 % Please edit documentation in R/gpc_traces.R
 \name{plot_traces}
 \alias{plot_traces}
-\title{Plot refractive index vs elution volume from a list of gpc data tibbles}
+\title{plotting function which is able to plot different GPC spectra depending on the chosen data_type}
 \usage{
-plot_traces(traces, durations = FALSE, xlim = c(10, 45), ylim = c(0,
-  100), normalized_RI = FALSE)
+plot_traces(traces, data_type = "elu", normalized_RI = FALSE,
+  durations = FALSE, ...)
 }
 \arguments{
 \item{traces}{A list of gpc data tibbles (best used with traces_in_dir(),}
 
-\item{durations}{a vector (numeric or string) of reaction durations at sample
+\item{data_type}{A string. /"raw/", "/elu/" or /"mwd/".}
+
+\item{durations}{A vector (numeric or string) of reaction durations at sample
 time.}
 }
 \description{
-Plot refractive index vs elution volume from a list of gpc data tibbles
+plotting function which is able to plot different GPC spectra depending on the chosen data_type
 }
 \seealso{
 \code{\link{traces_in_dir}})
